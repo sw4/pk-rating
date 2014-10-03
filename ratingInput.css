@@ -1,0 +1,33 @@
+ .rating-stars > fieldset {
+     float:left;
+     border:none;
+ }
+ .rating-stars > fieldset:not(:checked) > input {
+     display:none;
+ }
+ .rating-stars > fieldset:not(:checked) > label {
+     float:right;
+     width:1em;
+     padding:0 .1em;
+     overflow:hidden;
+     white-space:nowrap;
+     cursor:pointer;
+     font-size:200%;
+     line-height:1.2;
+     color:#ddd;
+ }
+ .rating-stars > fieldset:not(:checked) > label:before {
+     content:'★';
+ }
+ .rating-stars > fieldset > input:checked ~ label {
+     color: #f70;
+ }
+ .rating-stars > fieldset:not(:checked) > label:hover, .rating-stars > fieldset:not(:checked) > label:hover ~ label {
+     color: gold;
+ }
+ .rating-stars > fieldset > input:checked + label:hover, .rating-stars > fieldset > input:checked + label:hover ~ label, .rating-stars > fieldset > input:checked ~ label:hover, .rating-stars > fieldset > input:checked ~ label:hover ~ label, .rating-stars > fieldset > label:hover ~ input:checked ~ label {
+     color: #ea0;
+ }
+ .rating-stars > fieldset > label:active {
+     position:relative;
+ }
