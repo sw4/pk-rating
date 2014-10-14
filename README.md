@@ -1,7 +1,7 @@
 Rating Input
 =========================
 
-[![Build Status](https://travis-ci.org/sw4/pk-toggleswitch.svg?branch=master)](https://travis-ci.org/sw4/pk-toggleswitch)
+[![Build Status](https://travis-ci.org/sw4/pk-rating.svg?branch=master)](https://travis-ci.org/sw4/pk-rating)
 
 Rating input field written in vanilla HTML &amp; CSS
 
