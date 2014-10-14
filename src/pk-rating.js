@@ -33,6 +33,7 @@ var pk = pk || {};
     pk.rating = function (opt) {
        var el=opt.element,
             inputName=opt.name || el.getAttribute('name') || 'pk-rating-'+pk.getRand(1,999);
+            /*jshint multistr:true */
         var str="<div class='pk-rating'>\
             <fieldset>\
                 <input type='radio' id='"+inputName+"_5' name='"+inputName+"' value='5' />\
