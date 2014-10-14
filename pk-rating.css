@@ -1,0 +1,33 @@
+ .pk-rating > fieldset {
+     float:left;
+     border:none;
+ }
+ .pk-rating > fieldset:not(:checked) > input {
+     display:none;
+ }
+ .pk-rating > fieldset:not(:checked) > label {
+     float:right;
+     width:1em;
+     padding:0 .1em;
+     overflow:hidden;
+     white-space:nowrap;
+     cursor:pointer;
+     font-size:200%;
+     line-height:1.2;
+     color:#ddd;
+ }
+ .pk-rating > fieldset:not(:checked) > label:before {
+     content:'★';
+ }
+ .pk-rating > fieldset > input:checked ~ label {
+     color: #f70;
+ }
+ .pk-rating > fieldset:not(:checked) > label:hover, .pk-rating > fieldset:not(:checked) > label:hover ~ label {
+     color: gold;
+ }
+ .pk-rating > fieldset > input:checked + label:hover, .pk-rating > fieldset > input:checked + label:hover ~ label, .pk-rating > fieldset > input:checked ~ label:hover, .pk-rating > fieldset > input:checked ~ label:hover ~ label, .pk-rating > fieldset > label:hover ~ input:checked ~ label {
+     color: #ea0;
+ }
+ .pk-rating > fieldset > label:active {
+     position:relative;
+ }
