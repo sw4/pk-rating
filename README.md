@@ -1,10 +1,15 @@
 Rating Input
 =========================
 
-Rating input field written in vanilla HTML &amp; CSS
+[![Build Status](https://travis-ci.org/sw4/pk-toggleswitch.svg?branch=master)](https://travis-ci.org/sw4/pk-toggleswitch)
 
-No JS needed.
+Rating input field written in vanilla HTML &amp; CSS
 
 **Licensed under [cc by-sa 3.0](http://creativecommons.org/licenses/by-sa/3.0/) with attribution required**
 
-[Demo can be viewed here](http://sw4.github.io/rating-input/)
+[Demo](http://sw4.github.io/rating-input/)
+
+
+###Requires
+
+`pk-base.js` and `pk-base.css`
