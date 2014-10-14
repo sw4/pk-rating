@@ -1,0 +1,38 @@
+{
+  "name": "pk-rating",
+  "title": "pk-rating",
+  "description": "pk-rating",
+  "version": "0.0.1",
+  "homepage": "https://github.com/sw4/pk-rating",
+  "author": {
+    "name": "SW4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sw4/pk-rating.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sw4/pk-rating/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/sw4/pk-rating/blob/master/LICENSE-MIT"
+    },
+    {
+      "type": "GPL",
+      "url": "https://github.com/sw4/pk-rating/blob/master/LICENSE-GPL"
+    }
+  ],
+  "main": "dist/pk-rating",
+  "engines": {
+    "node": ">=0.6"
+  },
+  "scripts": {
+    "test": "grunt travis --verbose"
+  },
+  "devDependencies": {
+    "grunt": "~0.3.14"
+  },
+  "keywords": []
+}
