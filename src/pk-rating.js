@@ -47,7 +47,7 @@ var pk = pk || {};
                 <input type='radio' id='"+inputName+"_1' name='"+inputName+"' value='1' />\
                 <label for='"+inputName+"_1'></label>\
             </fieldset>\
-        </div>"        
+        </div>";
         pk.replaceEl(el, str);
     };
     return pk;
