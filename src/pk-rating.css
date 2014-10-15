@@ -15,6 +15,7 @@
      font-size:200%;
      line-height:1.2;
      color:#f5f5f5;
+     transition:color 100ms ease-in;
  }
  .pk-rating > fieldset:not(:checked) > label:before {
      content:'★';
