@@ -55,7 +55,7 @@ var pk = pk || {};
                         }  
                    }
                    return parseInt(val === undefined ? 0 : val,0);
-                };
+                }
                 val = val < 0 ? 0 : val;
                 val = val > 5 ? 5 : val;
                 if(val===0){
@@ -65,7 +65,7 @@ var pk = pk || {};
                     rEl[val-1].checked=true;
                 } 
             }
-        }
+        };
         obj.val(inputValue);
         
         
