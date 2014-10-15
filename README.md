@@ -9,30 +9,35 @@ Rating input field written in vanilla HTML &amp; CSS
 
 [Demo](http://sw4.github.io/rating-input/)
 
+###Features
+
+- HTML form compliant (input value can be submitted like with any other `input` element
+- Mousewheel support
 
 ###Requires
 
-`pk-base.js` and `pk-base.css`
+- `pk-base.js`
+- `pk-base.css`
 
 
 ###Usage
 
+`pk.rating(opt);`
 
-#####Plain Javascript
+Returns a new slider object.
 
-`pk.rating({element:document.getElementById('yourEl')});`*
+`opt` is an object consisting of:
 
-*<sup>You can use any means to retrieve a DOM node to pass to `pk.toggleswitch()`</sup>
+```
+element: \\ DOM element to replace with a slider - the elements attributes are carried over
+name: \\ the name to use for the input form element (can also be set as attribute on original element)
+value: \\ the starting value (defaults to 0)
+tabindex: \\ tabindex value (can also be set as attribute on original element) - defaults to 0
+listeners: \\ object consisting of regular event functions
+```
 
-#####jQuery
+###Methods
 
-Initiate with `$('yourEl').rating();`
+`rating.val(value)`
 
-#####Angular
-
-Simply include `pk-rating` as an application dependancy, add the attribute `pk-rating` and the `pkRating` directive will automatically apply.
-
-
-###Notes
-
-To assign the underlying input element a specific name, either pass the javascript object constructor `name:...` or add a name attribute to the passed element.
+Where `rating` is a rating object and value is either blank/null to get the current value, or a numeric value to set it (0-5)
