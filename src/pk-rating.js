@@ -30,11 +30,11 @@ var pk = pk || {};
             rEl.push(el.children[0].children[4]),
             rEl.push(el.children[0].children[2]),
             rEl.push(el.children[0].children[0]);
-        if(listeners){pk.bindListeners(listeners, rEl[0]);}
-        if(listeners){pk.bindListeners(listeners, rEl[1]);}
-        if(listeners){pk.bindListeners(listeners, rEl[2]);}
-        if(listeners){pk.bindListeners(listeners, rEl[3]);}
-        if(listeners){pk.bindListeners(listeners, rEl[4]);}
+        pk.bindListeners(listeners, rEl[0]);
+        pk.bindListeners(listeners, rEl[1]);
+        pk.bindListeners(listeners, rEl[2]);
+        pk.bindListeners(listeners, rEl[3]);
+        pk.bindListeners(listeners, rEl[4]);
 
         pk.bindEvent("mousewheel", el, function(e){
             var offset=1;
