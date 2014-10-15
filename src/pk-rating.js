@@ -3,7 +3,8 @@ var pk = pk || {};
     pk.rating = function (opt) {        
         var el=opt.element,
             listeners=opt.listeners === undefined ? {} : opt.listeners,
-            inputValue=opt.value || 0, 
+            inputValue=opt.value || el.getAttribute('value') || 0,
+            inputDisabled=(opt.disabled || el.getAttribute('disabled')) ? 'disabled' : '',   
             inputName=opt.name || el.getAttribute('name') || 'pk-rating-'+pk.getRand(1,999),
             inputTabIndex=opt.tabindex || el.getAttribute('tabindex') || 0;         
         
@@ -64,11 +65,19 @@ var pk = pk || {};
                 }else{
                     rEl[val-1].checked=true;
                 } 
+            },
+            disabled:function(val){
+                if(val!==undefined){
+                    pk.toggleClass(el, 'pk-disabled', val);
+                    for(var r in rEl){
+                        pk.attribute(rEl[r], 'disabled', val);
+                    }
+                }
+                return pk.attribute(rEl[0], 'disabled');
             }
         };
         obj.val(inputValue);
-        
-        
+        if(inputDisabled){obj.disabled(true);}
         return obj;        
     };
     return pk;
