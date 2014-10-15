@@ -31,7 +31,8 @@ Returns a new slider object.
 ```
 element: \\ DOM element to replace with a slider - the elements attributes are carried over
 name: \\ the name to use for the input form element (can also be set as attribute on original element)
-value: \\ the starting value (defaults to 0)
+value: \\ the starting value (defaults to 0, can also be set as attribute on original element)
+disabled: \\ boolean, whether the toggle is disabled (can also be set as attribute on original element)
 tabindex: \\ tabindex value (can also be set as attribute on original element) - defaults to 0
 listeners: \\ object consisting of regular event functions
 ```
@@ -41,3 +42,7 @@ listeners: \\ object consisting of regular event functions
 `rating.val(value)`
 
 Where `rating` is a rating object and value is either blank/null to get the current value, or a numeric value to set it (0-5)
+
+`rating.disabled(value)`
+
+Where `rating` is a rating object and value is either blank/null to get the current state, or a boolean value to set it
