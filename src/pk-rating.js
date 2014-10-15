@@ -35,19 +35,29 @@ var pk = pk || {};
         if(listeners){pk.bindListeners(listeners, rEl[2]);}
         if(listeners){pk.bindListeners(listeners, rEl[3]);}
         if(listeners){pk.bindListeners(listeners, rEl[4]);}
+
+        pk.bindEvent("mousewheel", el, function(e){
+            var offset=1;
+            if (e.wheelDelta > 0 || e.detail < 0) {
+                offset=-1;
+            }
+            obj.val(obj.val()+offset);         
+        }); 
         
         var obj={
             0:el,
             val:function(val){                
                 if(val===undefined){
-                   for(r in rEl){
+                   for(var r in rEl){
                         if(rEl[r].checked){                         
                             val= rEl[r].value;
                             break;
                         }  
                    }
-                    return val;
-                }
+                   return parseInt(val === undefined ? 0 : val,0);
+                };
+                val = val < 0 ? 0 : val;
+                val = val > 5 ? 5 : val;
                 if(val===0){
                     rEl[0].checked=true;       
                     rEl[0].checked=false;                    
@@ -57,6 +67,8 @@ var pk = pk || {};
             }
         }
         obj.val(inputValue);
+        
+        
         return obj;        
     };
     return pk;
