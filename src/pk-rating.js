@@ -1,42 +1,16 @@
 var pk = pk || {};
-(function (pk) {
-    // HELPERS FOR jQUERY+ANGULAR
-    if (typeof jQuery === 'object') {
-        // jquery available
-        jQuery.fn.extend({
-            pkRating: function () {
-                pk.rating({
-                    element: this[0],
-                    name:this[0].getAttribute('name')
-                });
-            }
-        });
-    }
-    if (typeof angular === 'object') {
-        // angular available
-        (
-        function () {
-            angular.module('pk-rating', ['ng'])
-                .directive('pkRating', function () {
-                return {
-                    restrict: 'A',
-                    link: function (scope, el) {
-                        pk.rating({
-                            element: el[0],
-                            name:el[0].getAttribute('name')
-                        });
-                    }
-                };
-            });
-        })();
-    }
-    pk.rating = function (opt) {
-       var el=opt.element,
-            inputName=opt.name || el.getAttribute('name') || 'pk-rating-'+pk.getRand(1,999);
+(function (pk) {    
+    pk.rating = function (opt) {        
+        var el=opt.element,
+            listeners=opt.listeners === undefined ? {} : opt.listeners,
+            inputValue=opt.value || 0, 
+            inputName=opt.name || el.getAttribute('name') || 'pk-rating-'+pk.getRand(1,999),
+            inputTabIndex=opt.tabindex || el.getAttribute('tabindex') || 0;         
+        
             /*jshint multistr:true */
         var str="<div class='pk-rating'>\
             <fieldset>\
-                <input type='radio' id='"+inputName+"_5' name='"+inputName+"' value='5' />\
+                <input type='radio' id='"+inputName+"_5' name='"+inputName+"' value='5' tabindex='"+inputTabIndex+"'/>\
                 <label for='"+inputName+"_5'></label>\
                 <input type='radio' id='"+inputName+"_4' name='"+inputName+"' value='4' />\
                 <label for='"+inputName+"_4'></label>\
@@ -48,7 +22,42 @@ var pk = pk || {};
                 <label for='"+inputName+"_1'></label>\
             </fieldset>\
         </div>";
-        pk.replaceEl(el, str);
+        el = pk.replaceEl(el, str);
+
+        var rEl=[];
+            rEl.push(el.children[0].children[8]),
+            rEl.push(el.children[0].children[6]),
+            rEl.push(el.children[0].children[4]),
+            rEl.push(el.children[0].children[2]),
+            rEl.push(el.children[0].children[0]);
+        if(listeners){pk.bindListeners(listeners, rEl[0]);}
+        if(listeners){pk.bindListeners(listeners, rEl[1]);}
+        if(listeners){pk.bindListeners(listeners, rEl[2]);}
+        if(listeners){pk.bindListeners(listeners, rEl[3]);}
+        if(listeners){pk.bindListeners(listeners, rEl[4]);}
+        
+        var obj={
+            0:el,
+            val:function(val){                
+                if(val===undefined){
+                   for(r in rEl){
+                        if(rEl[r].checked){                         
+                            val= rEl[r].value;
+                            break;
+                        }  
+                   }
+                    return val;
+                }
+                if(val===0){
+                    rEl[0].checked=true;       
+                    rEl[0].checked=false;                    
+                }else{
+                    rEl[val-1].checked=true;
+                } 
+            }
+        }
+        obj.val(inputValue);
+        return obj;        
     };
     return pk;
 })(pk);
