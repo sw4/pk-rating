@@ -16,8 +16,8 @@ Rating input field written in vanilla HTML &amp; CSS
 
 ###Requires
 
-- `pk-base.js`
-- `pk-base.css`
+- `pk-core.js`
+- `pk-core.css`
 
 
 ###Usage
