@@ -26,10 +26,10 @@ var pk = pk || {};
         el = pk.replaceEl(el, str);
 
         var rEl=[];
-            rEl.push(el.children[0].children[8]),
-            rEl.push(el.children[0].children[6]),
-            rEl.push(el.children[0].children[4]),
-            rEl.push(el.children[0].children[2]),
+            rEl.push(el.children[0].children[8]);
+            rEl.push(el.children[0].children[6]);
+            rEl.push(el.children[0].children[4]);
+            rEl.push(el.children[0].children[2]);
             rEl.push(el.children[0].children[0]);
         pk.bindListeners(listeners, rEl[0]);
         pk.bindListeners(listeners, rEl[1]);
