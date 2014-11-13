@@ -1,5 +1,11 @@
 Rating Input
 =========================
+[![deprecated](http://badges.github.io/stability-badges/dist/deprecated.svg)](https://github.com/sw4/pocketknife) 
+
+Functionality now integrated into [pocketknife ui](https://github.com/sw4/pocketknife)
+
+--------------
+
 
 [![Build Status](https://travis-ci.org/sw4/pk-rating.svg?branch=master)](https://travis-ci.org/sw4/pk-rating)
 
